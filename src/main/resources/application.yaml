@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vanish_db
+    username: abdulkadhar                 # nee use pannura username
+    password: Kadhar@755022                 # nee set panna password (illana empty string "" podu)
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create                 # first time table automatic create aagum
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+    # Redis illana error varum, so temporary fake connection (no crash)
+    # Apdiye Redis install pannala na idhu work pannum
+
+  
